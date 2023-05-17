@@ -13,10 +13,10 @@ if datasource == "NCBI":
     operation = st.selectbox("Select the operation to perform", ("Search", "Fetch"))
     term = st.text_input(
         label="Enter the search term",
-        help="Example: human[organism] AND topoisomerase[protein name]",
+        placeholder="Example: human[organism] AND topoisomerase[protein name]",
     )
 
-    if st.button('Peform Operation'):
+    if st.button('Perform Operation'):
         data = ncbi.get(operation, database, term)
         st.write(data)
 
